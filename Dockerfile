@@ -12,7 +12,8 @@ RUN apk update && apk add curl wget && \
     mkdir -p /minecraft/world && \
     curl -LO https://media.forgecdn.net/files/2787/18/SkyFactory_4_Server_4.1.0.zip && \
     unzip SkyFactory_4_Server_4.1.0.zip && \
-    rm SkyFactory_4_Server_4.1.0.zip
+    rm SkyFactory_4_Server_4.1.0.zip && \
+    mv ./SkyFactory_4_Server_4.1.0/* ./
     
 # Accept EULA
 RUN echo "# EULA accepted on $(date)" > /minecraft/eula.txt && \
